@@ -14,11 +14,6 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public User getCurrentUser() {
-        var currentUser = SecurityContextHolder.getContext().getAuthentication();
-        return (User) currentUser.getPrincipal();
-    }
-
     public void createUser(User newUser, String rePassword) {
         User user = userRepository.findUserByUsername(newUser.getUsername());
         if (user != null) {

@@ -4,7 +4,6 @@ import kz.example.ToDoList.Manager.mapper.CategoryMapper;
 import kz.example.ToDoList.Manager.model.Dto.CategoryDto;
 import kz.example.ToDoList.Manager.model.entity.Category;
 import kz.example.ToDoList.Manager.repository.CategoryRepository;
-import kz.example.ToDoList.Manager.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
