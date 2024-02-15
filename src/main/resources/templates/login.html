@@ -1,0 +1,67 @@
+<!DOCTYPE html >
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/main.html">
+<head>
+    <title>Home</title>
+</head>
+<div class="container-fluid" layout:fragment="content">
+    <form class="form-signin" method="post" action="/auth">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""
+                   autofocus="">
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                   required="">
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button type="button" class="btn btn-lg btn-success btn-block" data-bs-toggle="modal"
+                data-bs-target="#createModal">Sign up
+        </button>
+    </form>
+
+    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form class="form-signin" method="post" action="/register">
+                    <div class="modal-body">
+                        <h2 class="form-signin-heading">Please sign up</h2>
+                        <p>
+                            <label for="username2" class="sr-only">Username</label>
+                            <input type="text" id="username2" name="username" class="form-control" placeholder="Username"
+                                   required="" autofocus="">
+                        </p>
+                        <p>
+                            <label for="password2" class="sr-only">Password</label>
+                            <input type="password" id="password2" name="password" class="form-control"
+                                   placeholder="Password" required="">
+                        </p>
+                        <p>
+                            <label for="re-password" class="sr-only">Re-password</label>
+                            <input type="password" id="re-password" name="rePassword" class="form-control"
+                                   placeholder="Re-password" required="">
+                        </p>
+                        <p>
+                            <label for="fullname" class="sr-only">Full name</label>
+                            <input type="text" id="fullname" name="fullName" class="form-control" placeholder="Full name"
+                                   required="" autofocus="">
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-lg btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

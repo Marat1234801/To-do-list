@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/main.html">
+<head>
+    <title>Adding Task</title>
+</head>
+<div class="container" layout:fragment="content">
+    <form method="post" action="/add-task">
+        <div class="mb-3">
+            <label for="exampleInputTitle1" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="exampleInputTitle1" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputDeadline1" class="form-label">Deadline</label>
+            <input type="datetime-local" class="form-control" name="deadline" id="exampleInputDeadline1" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputCategory1" class="form-label">Category</label>
+            <select class="form-select" name="category" id="exampleInputCategory1">
+                <option value="value1" th:each="category : ${categories}" th:text="${category.name}"
+                        th:value="${category.id}"></option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</html>

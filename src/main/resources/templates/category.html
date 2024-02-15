@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       layout:decorate="layout/main.html">
+<head>
+    <title>Category Details</title>
+</head>
+<div class="container" layout:fragment="content">
+    <form method="post" action="/edit-category">
+        <input type="hidden" name="id" th:value="${category.id}">
+        <div class="mb-3">
+            <label for="exampleInputTitle1" class="form-label">Title</label>
+            <input type="text" class="form-control" name="name" id="exampleInputTitle1" th:value="${category.name}"
+                   required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</html>

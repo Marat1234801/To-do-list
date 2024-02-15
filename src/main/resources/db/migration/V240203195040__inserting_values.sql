@@ -1,0 +1,18 @@
+-- INSERT INTO categories(CREATED_AT, NAME)
+-- VALUES(now(), 'SPORT'),
+-- (now(), 'HOMEWORK'),
+-- (now(), 'DIPLOMA'),
+-- (now(), 'HOUSEWORK'),
+-- (now(), 'WORK');
+--
+-- INSERT INTO tasks(created_at, deadline, is_done, title, category_id)
+-- VALUES (now(), '2024-02-29 16:27:00', FALSE, 'Do 5 push-ups', 1),
+--        (now(), '2024-02-29 16:27:00', FALSE, 'DO 5 squats', 1),
+--        (now(), '2024-02-29 16:27:00', FALSE, 'Write essay about MVC', 2),
+--        (now(), '2024-02-29 16:27:00', FALSE, 'Write essay about Philosophy', 2),
+--        (now(), '2024-02-29 16:27:00', FALSE, 'Make competitive analyze', 3),
+--        (now(), '2024-02-29 16:27:00', FALSE, 'Create presentation about your project', 3),
+--        (now(), '2024-02-29 16:27:00', FALSE, 'Throw out the trash', 4),
+--        (now(), '2024-02-29 16:27:00', FALSE, 'Vacuum the house', 4),
+--        (now(), '2024-02-29 16:27:00', FALSE, 'Prepare a report on a new project', 5),
+--        (now(), '2024-02-29 16:27:00', FALSE, 'Finish the project', 5);

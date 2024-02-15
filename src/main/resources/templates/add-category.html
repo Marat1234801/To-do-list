@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/main.html">
+<head>
+    <title>Adding Category</title>
+</head>
+<div class="container" layout:fragment="content">
+    <form method="post" action="/add-category">
+        <div class="mb-3">
+            <label for="exampleInputTitle1" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="exampleInputTitle1" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</html>

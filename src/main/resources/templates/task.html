@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/main.html">
+<head>
+    <title>Task Details</title>
+</head>
+<div class="container" layout:fragment="content">
+    <form method="post" action="/edit-task">
+        <input type="hidden" name="id" th:value="${task.id}">
+        <div class="mb-3">
+            <label for="exampleInputTitle1" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="exampleInputTitle1" th:value="${task.title}"
+                   required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputDeadline1" class="form-label">Deadline</label>
+            <input type="datetime-local" class="form-control" name="deadline" th:value="${task.deadline}"
+                   id="exampleInputDeadline1" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputCategory1" class="form-label">Category</label>
+            <select class="form-select" name="category" id="exampleInputCategory1">
+                <option value="value1" th:each="category : ${categories}" th:text="${category.name}"
+                        th:value="${category.id}" th:selected="${category.id == task.category.id}"></option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <h4>Is done?</h4>
+            <label for="exampleInputIsDone" class="form-label">Yes</label>
+            <input type="radio" value="True" name="isDone" th:checked="${task.isDone != false}"
+                   id="exampleInputIsDone">
+            <label for="exampleInputIsNotDone" class="form-label">No</label>
+            <input type="radio" value="False" name="isDone" th:checked="${task.isDone == false}"
+                   id="exampleInputIsNotDone">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</html>

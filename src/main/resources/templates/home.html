@@ -1,0 +1,55 @@
+<!DOCTYPE html >
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/main.html">
+<head>
+    <title>Home</title>
+</head>
+<div class="container-fluid" layout:fragment="content">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col" onclick="search()">Title</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">isDone</th>
+            <th scope="col">Category</th>
+            <th scope="col">Details</th>
+            <th scope="col">Remove</th>
+        </tr>
+        </thead>
+        <tbody id="tasks">
+        </tbody>
+    </table>
+    <script>
+        function loadItem() {
+            let request = new XMLHttpRequest();
+            request.open("GET", "http://localhost:8080/tasks")
+            request.send()
+            let result = ""
+            request.onload = function () {
+                let tasks = JSON.parse(request.responseText)
+                for (let i = 0; i < tasks.length; i++) {
+                    result += "<tr>"
+                    result += "<th scope='row'>" + tasks[i].title + "</th>"
+                    result += "<td>" + tasks[i].deadline + "</td>"
+                    result += "<td>" + tasks[i].isDone + "</td>"
+                    result += "<td>" + tasks[i].categoryName + "</td>"
+                    result += "<td><a class='btn btn-primary' href='" + tasks[i].id + "'/>Details</a></td>"
+                    result += "<td><button class='btn btn-danger' onclick='remove(" + tasks[i].id + ")'>REMOVE</button></td>"
+                    result += "</tr>"
+                }
+                document.getElementById("tasks").innerHTML = result
+            }
+        }
+
+        function remove(id) {
+            let request = new XMLHttpRequest()
+            request.open("DELETE", "http://localhost:8080/tasks/delete/" + id)
+            request.send()
+            request.onload = function () {
+                loadItem()
+            }
+        }
+    </script>
+</div>
+</html>
