@@ -1,9 +1,7 @@
 package kz.example.ToDoList.Manager.model.entity.main;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
@@ -22,12 +20,12 @@ public class BaseEntity {
     private LocalDateTime updatedAt;
 
     @PrePersist
-    public void createdAt(){
-        this.createdAt =LocalDateTime.now();
+    public void createdAt() {
+        this.createdAt = LocalDateTime.now();
     }
 
     @PreUpdate
-    public void updatedAt(){
+    public void updatedAt() {
         this.updatedAt = LocalDateTime.now();
     }
 }

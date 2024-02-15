@@ -65,8 +65,7 @@ public class TaskService {
     }
 
     public Task getTaskById(Long id) {
-        Task task = taskRepository.findById(id).orElse(null);
-        return task;
+        return taskRepository.findById(id).orElse(null);
     }
 
     public void updateTask(Task task) {

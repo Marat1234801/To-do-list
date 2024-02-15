@@ -17,7 +17,7 @@ import java.util.Collection;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User  extends BaseEntity implements UserDetails {
+public class User extends BaseEntity implements UserDetails {
     @Column(name = "USERNAME")
     private String username;
 

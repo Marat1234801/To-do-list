@@ -11,9 +11,3 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-
-#  flyway:
-#    url: jdbc:postgresql://localhost:5432/to-do-list
-#    user: postgres
-#    password: postgres
-#    locations: classpath:db/migration

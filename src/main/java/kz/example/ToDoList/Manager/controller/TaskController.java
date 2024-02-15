@@ -1,7 +1,5 @@
 package kz.example.ToDoList.Manager.controller;
 
-import kz.example.ToDoList.Manager.model.Dto.TaskDto;
-import kz.example.ToDoList.Manager.model.entity.Task;
 import kz.example.ToDoList.Manager.model.request.TaskRequest;
 import kz.example.ToDoList.Manager.model.resposnse.TaskResponse;
 import kz.example.ToDoList.Manager.service.TaskService;
